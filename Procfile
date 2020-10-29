@@ -1,1 +1,1 @@
-bot: bundle exec ruby bot_test.rb
+discordbot: ruby bot_test.rb

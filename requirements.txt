@@ -1,1 +1,1 @@
-discord.rb==3.3.0
+discordrb==3.3.0
