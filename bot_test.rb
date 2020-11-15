@@ -6,7 +6,7 @@ client_id: ENV['CLIENT_ID'],
 prefix:'/',
 )
 
-bot.command :hello do |event|
+bot.command :ola do |event|
  event.send_message("hallo,world.#{event.user.name}")
 end
 
