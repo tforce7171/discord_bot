@@ -17,6 +17,8 @@ GEM
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
+    httpclient (2.8.3)
+    json (2.3.1)
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2020.0512)
@@ -44,6 +46,8 @@ PLATFORMS
 
 DEPENDENCIES
   discordrb
+  httpclient
+  json
 
 RUBY VERSION
    ruby 2.4.10p364
