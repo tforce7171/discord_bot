@@ -25,9 +25,9 @@ bot.command :ola do |event|
       response = client.get(url)
       result = JSON.parse(response.body)
       if result["meta"]["total"]
-        bot.send_message(549143999814959124, "other", tts = false, embed = nil)
+        event.send_message(549143999814959124, "other", tts = false, embed = nil)
       else
-        bot.send_message(549143999814959124, "QT", tts = false, embed = nil)
+        event.send_message(549143999814959124, "QT", tts = false, embed = nil)
       end
     end
   end
