@@ -22,11 +22,14 @@ bot.command :ola do |event|
   if resulta["data"]
     event.send_message("api retrieved")
   end
-  
+
   results["data"].each do |result|
     today_unix = Date.today.to_time.to_i
     start_at_date_unix = result["start_at"]-72000
     tournament_id = result["tournament_id"]
+
+    event.send_message("#{todat_unix};#{start_at_date_unix};#{tournament_id}")
+    
     if today_unix == start_at_date_unix
       event.send_message("date match found")
       url = "https://api.wotblitz.asia/wotb/tournaments/stages/?application_id=eda85c3d6ddbb56920d3544319a4a788&tournament_id=#{tournament_id}"
@@ -40,7 +43,7 @@ bot.command :ola do |event|
       end
     end
   end
-  event.send_message("#{today_unix}")
+  event.send_message("over")
 end
 
 bot.run
