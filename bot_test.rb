@@ -19,8 +19,8 @@ bot.command :ola do |event|
   results = JSON.parse(response.body)
 
   event.send_message("api parsed")
-  if resulta["data"]
-    event.send_message("api retrieved")
+  if results["data"]
+    event.send_message("api retrieved#{results["data"]}")
   end
 
   results["data"].each do |result|
@@ -28,8 +28,8 @@ bot.command :ola do |event|
     start_at_date_unix = result["start_at"]-72000
     tournament_id = result["tournament_id"]
 
-    event.send_message("#{todat_unix};#{start_at_date_unix};#{tournament_id}")
-    
+    event.send_message("#{today_unix};#{start_at_date_unix};#{tournament_id}")
+
     if today_unix == start_at_date_unix
       event.send_message("date match found")
       url = "https://api.wotblitz.asia/wotb/tournaments/stages/?application_id=eda85c3d6ddbb56920d3544319a4a788&tournament_id=#{tournament_id}"
@@ -37,9 +37,9 @@ bot.command :ola do |event|
       response = client.get(url)
       result = JSON.parse(response.body)
       if result["meta"]["total"]
-        event.send_message(549143999814959124, "other", tts = false, embed = nil)
+        bot.send_message(549143999814959124, "other", tts = false, embed = nil)
       else
-        event.send_message(549143999814959124, "QT", tts = false, embed = nil)
+        bot.send_message(549143999814959124, "QT", tts = false, embed = nil)
       end
     end
   end
