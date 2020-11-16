@@ -10,7 +10,7 @@ prefix:'/',
 )
 
 bot.command :ola do |event|
-  url = "https://api.wotblitz.asia/wotb/tournaments/list/?application_id=#{ENV['APPLICATION_ID']}&fields=start_at%2Ctitle%2Ctournament_id"
+  url = "https://api.wotblitz.asia/wotb/tournaments/list/?application_id=eda85c3d6ddbb56920d3544319a4a788&fields=start_at%2Ctitle%2Ctournament_id"
   client = HTTPClient.new
   response = client.get(url)
   results = JSON.parse(response.body)
