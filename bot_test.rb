@@ -14,7 +14,8 @@ bot.command :ola do |event|
   client = HTTPClient.new
   response = client.get(url)
   results = JSON.parse(response.body)
-
+  event.send_message(results["data"])
+  
   results["data"].each do |result|
     today_unix = Date.today.to_time.to_i
     start_at_date_unix = result["start_at"]-72000
