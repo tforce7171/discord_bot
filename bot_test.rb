@@ -24,7 +24,7 @@ bot.command :ola do |event|
   end
 
   results["data"].each do |result|
-    today_unix = Date.today.to_time.to_i
+    today_unix = Date.today.to_time.to_i-32400
     start_at_date_unix = result["start_at"]-72000
     tournament_id = result["tournament_id"]
 
