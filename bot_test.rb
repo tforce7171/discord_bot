@@ -12,10 +12,6 @@ prefix:'/',
 bot.command :ola do |event|
   url = "https://api.wotblitz.asia/wotb/tournaments/list/?application_id=#{ENV['APPLICATION_ID']}&fields=start_at%2Ctitle%2Ctournament_id"
   client = HTTPClient.new
-  # query = {
-  #   'application_id' => #{APPLICATION_ID},
-  #   'account_id' => '2010886246'
-  # }
   response = client.get(url)
   results = JSON.parse(response.body)
 
@@ -34,23 +30,8 @@ bot.command :ola do |event|
         bot.send_message(549143999814959124, "QT", tts = false, embed = nil)
       end
     end
-    # start_at_unix = result["start_at"]
-    # start_at = Time.at(start_at_unix)
-    # title = result["title"]
-    # tournament_id = result["tournament_id"]
-    # event.send_message("種類：#{title}\n時間：#{start_at}\nID：#{tournament_id}hoge")
   end
   event.send_message("over")
-  # if results["data"]
-  #   results["data"].each do |result|
-  #     start_at_unix = result["start_at"]
-  #     start_at = Time.at(start_at_unix)
-  #     title = result["title"]
-  #     tournament_id = result["tournament_id"]
-  #     event.send_message("種類：#{title}\n時間：#{start_at}\nID：#{tournament_id}hoge")
-  #   end
-  # else
-  # event.send_message("something went wrong3")
 end
 
 bot.run
