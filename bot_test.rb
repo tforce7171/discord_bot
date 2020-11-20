@@ -54,7 +54,9 @@ bot.heartbeat do |event|
           title = result["data"]["title"]
           bot.send_message(764701181783572500, %Q[/poll "#{title}" "19:00" "19:30" "19:55" "未定" "参加不可"])
         elsif qt_count == 0
-          bot.send_message(764701181783572500, "?qt8")
+          bot.send_message(764701181783572500, %Q[/poll "クイック出場可能時間" "20:00" "20:30" "21:00" "Tier8希望" "Tier10希望" "未定" "参加不可"])
+          bot.send_message(764701181783572500, "mention8")
+          bot.send_message(764701181783572500, "#{Date.today.month}月#{Date.today.date}日　Tier8・10クイックトーナメント募集\nSimple Pollの投稿の出れる時間と希望Tierのリアクションを押してください")
           qt_count = 1
         end
       end
